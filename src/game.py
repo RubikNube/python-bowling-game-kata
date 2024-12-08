@@ -8,12 +8,12 @@ class Game:
 
     def score(self) -> int:
         score = 0
-        i = 0
+        frame_index = 0
         for frame in range(0, 10):
-            if self.__rolls[i] + self.__rolls[i + 1] == 10:  # spare
-                score += 10 + self.__rolls[i + 2]
-                i += 2
+            if self.__rolls[frame_index] + self.__rolls[frame_index + 1] == 10:  # spare
+                score += 10 + self.__rolls[frame_index + 2]
+                frame_index += 2
             else:
-                score += self.__rolls[i] + self.__rolls[i + 1]
-                i += 2
+                score += self.__rolls[frame_index] + self.__rolls[frame_index + 1]
+                frame_index += 2
         return score
