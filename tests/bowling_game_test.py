@@ -19,3 +19,10 @@ class BowlingGameTest(unittest.TestCase):
     def test_all_ones(self) -> None:
         self.roll_many(20, 1)
         self.assertEqual(20, self.__game.score())
+
+    def test_one_spare(self) -> None:
+        self.__game.roll(5)
+        self.__game.roll(5)  # spare
+        self.__game.roll(3)
+        self.roll_many(17, 0)
+        self.assertEqual(16, self.__game.score())
