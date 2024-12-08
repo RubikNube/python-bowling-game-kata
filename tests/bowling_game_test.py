@@ -9,11 +9,13 @@ class BowlingGameTest(unittest.TestCase):
         self.__game: Game = Game()
 
     def test_gutter_game(self) -> None:
-        for i in range(20):
-            self.__game.roll(0)
+        self.roll_many(20, 0)
         self.assertEqual(0, self.__game.score())
 
+    def roll_many(self, rolls: int, pins: int) -> None:
+        for i in range(rolls):
+            self.__game.roll(pins)
+
     def test_all_ones(self) -> None:
-        for i in range(20):
-            self.__game.roll(1)
+        self.roll_many(20, 1)
         self.assertEqual(20, self.__game.score())
