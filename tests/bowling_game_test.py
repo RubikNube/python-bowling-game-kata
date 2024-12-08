@@ -2,4 +2,5 @@ import unittest
 
 
 class BowlingGameTest(unittest.TestCase):
-    pass
+    def test_pass(self):
+        self.assertTrue(True)
