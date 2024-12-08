@@ -1,6 +1,8 @@
 import unittest
 
+from src.game import Game
+
 
 class BowlingGameTest(unittest.TestCase):
-    def test_pass(self):
-        self.assertTrue(True)
+    def test_gutter_game(self):
+        game: Game = Game()
