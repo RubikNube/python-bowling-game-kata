@@ -31,8 +31,11 @@ class BowlingGameTest(unittest.TestCase):
         self.__game.roll(5)
 
     def test_one_strike(self) -> None:
-        self.__game.roll(10)  # strike
+        self.roll_strike()
         self.__game.roll(3)
         self.__game.roll(4)
         self.roll_many(16, 0)
         self.assertEqual(24, self.__game.score())
+
+    def roll_strike(self) -> None:
+        self.__game.roll(10)
