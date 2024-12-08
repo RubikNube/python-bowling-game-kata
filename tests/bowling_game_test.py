@@ -39,3 +39,7 @@ class BowlingGameTest(unittest.TestCase):
 
     def roll_strike(self) -> None:
         self.__game.roll(10)
+
+    def test_perfect_game(self) -> None:
+        self.roll_many(12, 10)
+        self.assertEqual(300, self.__game.score())
